@@ -25,11 +25,51 @@ module Acron_x32
 	output	logic			CPU_halt
 );
 
-	// control signals
-	logic	[2:0]	read;
-	logic			write_REG;
-	logic			write_PC;
-	logic			write_SR;
+	// bus control
+	logic			src_b_ena;
+	logic			write_dst_a;
+	logic			write_dst_b;
+
+	logic	[5:0]	src_a_addr;
+	logic	[5:0]	src_b_addr;
+	logic	[5:0]	dst_a_addr;
+	logic	[5:0]	dst_b_addr;
+
+	logic	[31:0]	src_a_data;
+	logic	[31:0]	src_b_data;
+
+	logic	[2:0]	bus_src_sel;
+	logic	[31:0]	data_bus;
+
+	logic	[31:0]	a;
+	logic	[31:0]	b;
+	logic	[31:0]	immediate;
+
+	logic	[31:0]	ALU_out;
+	logic	[63:0]	MUL_out;
+	logic	[31:0]	DIV_out;
+	logic	[31:0]	FPU_out;
+
+	logic	[31:0]	SR;
+	logic	[31:0]	PC;
+
+	// operation control
+	logic			load_MUL;
+	logic			load_DIV;
+	logic			load_FPU;
+	logic			load_MEM;
+	logic			store_MEM;
+
+	logic	[3:0]	ALU_OP;
+	logic			MUL_OP;
+	logic	[1:0]	DIV_OP;
+	logic	[3:0]	FPU_OP;
+	logic	[2:0]	FPU_RM;
+	logic	[3:0]	JMP_OP;
+
+	logic			ready_MUL;
+	logic			ready_DIV;
+	logic			ready_FPU;
 
 	logic			write_ALU_flags;
 	logic			write_FPU_flags;
@@ -40,36 +80,16 @@ module Acron_x32
 	logic			sel_imm;
 	logic			float_cmp;
 
-	logic			load_MUL;
-	logic			load_DIV;
-	logic			load_FPU;
-
-	logic			load;
-	logic			store;
-
-	logic			ready;
-	logic			ready_MUL;
-	logic			ready_DIV;
-	logic			ready_FPU;
-
-	logic	[3:0]	ALU_OP;
-	logic	[1:0]	MUL_OP;
-	logic	[1:0]	DIV_OP;
-	logic	[3:0]	FPU_OP;
-	logic	[2:0]	FPU_RM;
-	logic	[3:0]	JMP_OP;
-
+	// control unit + instruction decoder
 	logic	[3:0]	step_counter;
 	logic	[31:0]	instruction;
 
-	logic			stall;
-	logic			next_step;
 	logic			fetch_imm;
-
-	logic			GIE;
-	logic			set_GIE;
-	logic			clr_GIE;
-
+	logic			ready;
+	logic			next_step;
+	logic			stall;
+	
+	// interrupt control
 	logic			int_req;
 	logic	[31:0]	isr_ptr;
 	logic			int_taken;
@@ -77,29 +97,10 @@ module Acron_x32
 	logic			ret_int;
 	logic			wait_int;
 
-	// data signals
-	logic	[5:0]	src_a_addr;
-	logic	[31:0]	src_a_data;
-
-	logic	[5:0]	src_b_addr;
-	logic	[31:0]	src_b_data;
-
-	logic			src_b_ena;
-
-	logic	[5:0]	dst_addr;
-	logic	[31:0]	data_bus;
-
-	logic	[31:0]	a;
-	logic	[31:0]	b;
-	logic	[31:0]	immediate;
-
-	logic	[31:0]	ALU_out;
-	logic	[31:0]	MUL_out;
-	logic	[31:0]	DIV_out;
-	logic	[31:0]	FPU_out;
-
-	logic	[31:0]	SR;
-	logic	[31:0]	PC;
+	// flag control
+	logic			GIE;
+	logic			set_GIE;
+	logic			clr_GIE;
 
 	// ALU flags
 	logic			ALU_C;	logic	C_flag;
@@ -151,28 +152,29 @@ module Acron_x32
 
 	// data bus source multiplexer
 	always_comb begin
-		case (read)
-		`READ_REG:	case (src_b_addr)
-					`SR:		data_bus = SR;
-					`PC:		data_bus = PC;
-					default:	data_bus = src_b_data;
+		case (bus_src_sel)
+		`SEL_REG:	case (src_b_addr)
+					`SR:		data_bus_a = SR;
+					`PC:		data_bus_a = PC;
+					default:	data_bus_a = src_b_data;
 					endcase
-		`READ_MUL:	data_bus = MUL_out;
-		`READ_DIV:	data_bus = DIV_out;
-		`READ_FPU:	data_bus = FPU_out;
-		`READ_MEM:	data_bus = dmem_din;
-		default:	data_bus = ALU_out;
+		`SEL_MULL:	data_bus_a = MUL_out[31:0];
+		`SEL_MULH:	data_bus_a = MUL_out[63:32];
+		`SEL_DIV:	data_bus_a = DIV_out;
+		`SEL_FPU:	data_bus_a = FPU_out;
+		`SEL_MEM:	data_bus_a = dmem_din;
+		default:	data_bus_a = ALU_out;
 		endcase
 	end
 
 	// memory controller
 	always_comb begin
-		if (store) begin
+		if (store_MEM) begin
 			write		= 1'b1;
 			dmem_addr	= ALU_out;
 		end
 
-		else if (load) begin
+		else if (load_MEM) begin
 			write		= 1'b0;
 			dmem_addr	= ALU_out;
 		end
@@ -183,7 +185,7 @@ module Acron_x32
 		end
 	end
 
-	assign	dmem_dout = write ? data_bus : 32'h00000000;
+	assign	dmem_dout = write ? data_bus_a : 32'h00000000;
 
 	// interrupt priority encoder
 	always_comb begin
@@ -233,9 +235,13 @@ module Acron_x32
 		.clk(clk),
 		.reset(reset),
 
-		.write(write_REG),
-		.dst_addr(dst_addr),
-		.dst_data(data_bus),
+		.write_a(write_dst_a),
+		.dst_a_addr(dst_a_addr),
+		.dst_a_data(data_bus_a),
+
+		.write_b(write_dst_b),
+		.dst_b_addr(dst_b_addr),
+		.dst_b_data(MUL_out[63:32]),
 
 		.src_a_addr(src_a_addr),
 		.src_a_data(src_a_data),
@@ -264,7 +270,7 @@ module Acron_x32
 	(
 		.clk(clk),
 		.reset(reset),
-		.load(load_MUL),
+		.load_MEM(load_MUL),
 
 		.op(MUL_OP),
 
@@ -280,7 +286,7 @@ module Acron_x32
 	(
 		.clk(clk),
 		.reset(reset),
-		.load(load_DIV),
+		.load_MEM(load_DIV),
 
 		.op(DIV_OP),
 
@@ -296,7 +302,7 @@ module Acron_x32
 	(
 		.clk(clk),
 		.reset(reset),
-		.load(load_FPU),
+		.load_MEM(load_FPU),
 
 		.op(FPU_OP),
 		.rm(FPU_RM),
@@ -325,11 +331,11 @@ module Acron_x32
 		.clk(clk),
 		.reset(reset),
 
-		.SR_in(data_bus),
+		.SR_in(data_bus_a),
 		.SR_out(SR),
 
 		// control signals
-		.write(write_SR),
+		.write(write_dst_a && dst_a_addr == `SR),
 		.write_ALU(write_ALU_flags),
 		.write_FPU(write_FPU_flags),
 
@@ -385,8 +391,8 @@ module Acron_x32
 		.imem_addr(imem_addr),
 		.imem_din(imem_din),
 
-		.jump(write_PC || jump),
-		.addr(data_bus),
+		.jump((write_dst_a && dst_a_addr == `PC) || jump),
+		.addr(data_bus_a),
 		.PC(PC),
 
 		.GIE(GIE),
@@ -418,10 +424,14 @@ module Acron_x32
 		.next_step(next_step),
 		.stall(stall),
 
+		.ret_int(ret_int),
+		.wait_int(wait_int)
+
 		// CPU control signals
 		.src_a_addr(src_a_addr),
 		.src_b_addr(src_b_addr),
-		.dst_addr(dst_addr),
+		.dst_a_addr(dst_a_addr),
+		.dst_b_addr(dst_b_addr),
 		.ALU_OP(ALU_OP),
 		.MUL_OP(MUL_OP),
 		.DIV_OP(DIV_OP),
@@ -429,31 +439,27 @@ module Acron_x32
 		.FPU_RM(FPU_RM),
 		.JMP_OP(JMP_OP),
 
-		.read(read),
-		.write_REG(write_REG),
-		.write_SR(write_SR),
-		.write_PC(write_PC),
+		.bus_src_sel(bus_src_sel),
+		.write_dst_a(write_dst_a),
+		.write_dst_b(write_dst_b),
 
-		.write_ALU_flags(write_ALU_flags),
-		.write_FPU_flags(write_FPU_flags),
+		.write_ALU_f(write_ALU_flags),
+		.write_FPU_f(write_FPU_flags),
 
 		.jump_ena(jump_ena),
 		.src_b_ena(src_b_ena),
 		.sel_imm(sel_imm),
 		.float_cmp(float_cmp),
-		
+
 		.load_MUL(load_MUL),
 		.load_DIV(load_DIV),
 		.load_FPU(load_FPU),
 
-		.load(load),
-		.store(store),
+		.load_MEM(load_MEM),
+		.store_MEM(store_MEM),
 
 		.set_GIE(set_GIE),
-		.clr_GIE(clr_GIE),
-
-		.ret_int(ret_int),
-		.wait_int(wait_int)
+		.clr_GIE(clr_GIE)
 	);
 
 endmodule

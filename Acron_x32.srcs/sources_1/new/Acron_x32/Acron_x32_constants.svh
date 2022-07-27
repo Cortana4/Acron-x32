@@ -20,10 +20,8 @@
 
 //******************************
 // MUL functions
-`define UMULL		2'd0
-`define	UMULH		2'd1
-`define	SMULL		2'd2
-`define SMULH		2'd3
+`define UMUL		1'd0
+`define	SMUL		1'd1
 
 
 //******************************
@@ -55,12 +53,13 @@
 
 //******************************
 // data bus src sel
-`define READ_ALU	3'd0
-`define READ_REG	3'd1
-`define READ_MUL	3'd2
-`define READ_DIV	3'd3
-`define READ_FPU	3'd4
-`define READ_MEM	3'd5
+`define SEL_ALU		3'd0
+`define SEL_REG		3'd1
+`define SEL_MULL	3'd2
+`define SEL_MULH	3'd3
+`define SEL_DIV		3'd4
+`define SEL_FPU		3'd5
+`define SEL_MEM		3'd6
 
 
 //******************************
