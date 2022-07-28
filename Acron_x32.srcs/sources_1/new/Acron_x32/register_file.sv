@@ -25,12 +25,12 @@ module register_file
 	logic			read_src_a;
 	logic			read_src_b;
 	logic			write_dst_a;
-	logic			write_dst_a;
+	logic			write_dst_b;
 
 	assign			read_src_a	= src_a_addr != 6'd0 && src_a_addr != `SR && src_a_addr != `PC;
 	assign			read_src_b	= src_b_addr != 6'd0 && src_b_addr != `SR && src_b_addr != `PC;
 	assign			write_dst_a	= dst_a_addr != 6'd0 && dst_a_addr != `SR && dst_a_addr != `PC && write_a;
-	assign			write_dst_b	= dst_b_addr != 6'd0 && dst_a_addr != `SR && dst_a_addr != `PC && write_a;
+	assign			write_dst_b	= dst_b_addr != 6'd0 && dst_b_addr != `SR && dst_b_addr != `PC && write_b;
 
 	assign			src_a_data	= read_src_a ? registers[src_a_addr] : 32'h00000000;
 	assign			src_b_data	= read_src_b ? registers[src_b_addr] : 32'h00000000;

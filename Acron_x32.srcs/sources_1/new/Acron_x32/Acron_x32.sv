@@ -154,16 +154,16 @@ module Acron_x32
 	always_comb begin
 		case (bus_src_sel)
 		`SEL_REG:	case (src_b_addr)
-					`SR:		data_bus_a = SR;
-					`PC:		data_bus_a = PC;
-					default:	data_bus_a = src_b_data;
+					`SR:		data_bus = SR;
+					`PC:		data_bus = PC;
+					default:	data_bus = src_b_data;
 					endcase
-		`SEL_MULL:	data_bus_a = MUL_out[31:0];
-		`SEL_MULH:	data_bus_a = MUL_out[63:32];
-		`SEL_DIV:	data_bus_a = DIV_out;
-		`SEL_FPU:	data_bus_a = FPU_out;
-		`SEL_MEM:	data_bus_a = dmem_din;
-		default:	data_bus_a = ALU_out;
+		`SEL_MULL:	data_bus = MUL_out[31:0];
+		`SEL_MULH:	data_bus = MUL_out[63:32];
+		`SEL_DIV:	data_bus = DIV_out;
+		`SEL_FPU:	data_bus = FPU_out;
+		`SEL_MEM:	data_bus = dmem_din;
+		default:	data_bus = ALU_out;
 		endcase
 	end
 
@@ -185,7 +185,7 @@ module Acron_x32
 		end
 	end
 
-	assign	dmem_dout = write ? data_bus_a : 32'h00000000;
+	assign	dmem_dout = write ? data_bus : 32'h00000000;
 
 	// interrupt priority encoder
 	always_comb begin
@@ -237,7 +237,7 @@ module Acron_x32
 
 		.write_a(write_dst_a),
 		.dst_a_addr(dst_a_addr),
-		.dst_a_data(data_bus_a),
+		.dst_a_data(data_bus),
 
 		.write_b(write_dst_b),
 		.dst_b_addr(dst_b_addr),
@@ -270,7 +270,7 @@ module Acron_x32
 	(
 		.clk(clk),
 		.reset(reset),
-		.load_MEM(load_MUL),
+		.load(load_MUL),
 
 		.op(MUL_OP),
 
@@ -286,7 +286,7 @@ module Acron_x32
 	(
 		.clk(clk),
 		.reset(reset),
-		.load_MEM(load_DIV),
+		.load(load_DIV),
 
 		.op(DIV_OP),
 
@@ -302,7 +302,7 @@ module Acron_x32
 	(
 		.clk(clk),
 		.reset(reset),
-		.load_MEM(load_FPU),
+		.load(load_FPU),
 
 		.op(FPU_OP),
 		.rm(FPU_RM),
@@ -331,7 +331,7 @@ module Acron_x32
 		.clk(clk),
 		.reset(reset),
 
-		.SR_in(data_bus_a),
+		.SR_in(data_bus),
 		.SR_out(SR),
 
 		// control signals
@@ -392,7 +392,7 @@ module Acron_x32
 		.imem_din(imem_din),
 
 		.jump((write_dst_a && dst_a_addr == `PC) || jump),
-		.addr(data_bus_a),
+		.addr(data_bus),
 		.PC(PC),
 
 		.GIE(GIE),
@@ -425,7 +425,7 @@ module Acron_x32
 		.stall(stall),
 
 		.ret_int(ret_int),
-		.wait_int(wait_int)
+		.wait_int(wait_int),
 
 		// CPU control signals
 		.src_a_addr(src_a_addr),

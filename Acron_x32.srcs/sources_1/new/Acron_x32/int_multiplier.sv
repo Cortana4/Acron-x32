@@ -10,7 +10,7 @@ module int_multiplier
 	input	logic				reset,
 	input	logic				load,
 
-	input	logic	[1:0]		op,
+	input	logic				op,
 
 	input	logic	[n-1:0]		a,
 	input	logic	[n-1:0]		b,
@@ -19,7 +19,7 @@ module int_multiplier
 
 	output	logic				ready
 );
-	logic	[1:0]		reg_op;
+	logic				reg_op;
 	logic	[n-1:0]		reg_b;
 	logic	[2*n-1:0]	reg_res;
 	logic				reg_sgn;
@@ -39,7 +39,7 @@ module int_multiplier
 
 	always_ff @(posedge clk, posedge reset) begin
 		if (reset) begin
-			reg_op	<= 2'b00;
+			reg_op	<= 1'b0;
 			reg_b	<= 0;
 			reg_res	<= 0;
 			reg_sgn	<= 1'b0;
