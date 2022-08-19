@@ -6,6 +6,9 @@
 !.gitignore
 
 # except...
+# project files
+!*.xpr
+
 # HDL files
 !*.vhd
 !*.v
@@ -32,8 +35,9 @@
 # memory initialization files
 !*.coe
 
-# project files
-!*.xpr
+# bitstream files
+!*.bit
+!*.bin
 
 # C files
 !*.c
