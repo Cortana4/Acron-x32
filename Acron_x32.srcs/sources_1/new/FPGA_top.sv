@@ -2,20 +2,20 @@
 
 module FPGA_top
 (
-	input	logic	ref_clk,
-	input	logic	reset_btn,
+	input	logic			ref_clk,
+	input	logic			reset_btn,
 
-	input	logic	mode_btn,
-	output	logic	mode_led,
-	output	logic	halt_led,
+	input	logic			mode_btn,
+	output	logic			mode_led,
+	output	logic			halt_led,
 
-	output	logic	tx,
-	input	logic	rx,
-	input	logic	cts,
-	output	logic	rts,
+	output	logic			tx,
+	input	logic			rx,
+	input	logic			cts,
+	output	logic			rts,
 
-	output	logic	tx_led,
-	output	logic	rx_led
+	output	logic			tx_led,
+	output	logic			rx_led
 );
 
 	logic			clk;
@@ -39,6 +39,7 @@ module FPGA_top
 	logic	[31:0]	ROM_dout_b;
 	logic	[31:0]	RAM_dout_a;
 	logic	[31:0]	RAM_dout_b;
+	logic	[31:0]	RAM_din_b;
 
 	// UART
 	logic	[31:0]	UART_dout;

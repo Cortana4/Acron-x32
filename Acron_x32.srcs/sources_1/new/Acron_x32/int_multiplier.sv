@@ -16,6 +16,10 @@ module int_multiplier
 	input	logic	[n-1:0]		b,
 
 	output	logic	[2*n-1:0]	y,
+	output	logic				C,
+	output	logic				Z,
+	output	logic				N,
+	output	logic				S,
 
 	output	logic				ready
 );
@@ -30,10 +34,20 @@ module int_multiplier
 
 	enum	logic		{IDLE, CALC} state;
 
+	assign				Z = ~|y;
+	assign				N = y[2*n-1];
+	assign				S = reg_sgn;
+
 	always_comb begin
 		case (reg_op)
-		`UMUL:	y = reg_res;
-		`SMUL:	y = reg_sgn ? -reg_res : reg_res;
+		`UMUL:	begin
+					y = reg_res;
+					C = |y[2*n-1:n];
+				end
+		`SMUL:	begin
+					y = reg_sgn ? -reg_res : reg_res;
+					C = (S && ~&y[2*n-1:n-1]) || (!S && |y[2*n-1:n]);
+				end
 		endcase
 	end
 

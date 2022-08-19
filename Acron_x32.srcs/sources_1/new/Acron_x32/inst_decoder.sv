@@ -37,7 +37,9 @@ module inst_decoder
 	output	logic			jump_ena,
 	output	logic			src_b_ena,
 	output	logic			sel_imm,
-	output	logic			float_cmp,
+	output	logic			sel_MUL_f,
+	output	logic			sel_DIV_f,
+	output	logic			sel_FPU_f,
 
 	output	logic			load_MUL,
 	output	logic			load_DIV,
@@ -84,7 +86,9 @@ module inst_decoder
 		jump_ena	= 1'b0;
 		src_b_ena	= 1'b1;
 		sel_imm		= 1'b0;
-		float_cmp	= 1'b0;
+		sel_MUL_f	= 1'b0;
+		sel_DIV_f	= 1'b0;
+		sel_FPU_f	= 1'b0;
 
 		load_MUL	= 1'b0;
 		load_DIV	= 1'b0;
@@ -186,6 +190,8 @@ module inst_decoder
 								dst_b_addr	= func[7:2];
 								write_dst_a	= ready;
 								write_dst_b	= ready;
+								write_ALU_f	= 1'b1;
+								sel_MUL_f	= 1'b1;
 								stall		= !ready;
 							end
 					endcase
@@ -202,6 +208,8 @@ module inst_decoder
 					4'd1:	begin
 								bus_src_sel	= `SEL_DIV;
 								write_dst_a	= ready;
+								write_ALU_f	= 1'b1;
+								sel_DIV_f	= 1'b1;
 								stall		= !ready;
 							end
 					endcase
@@ -220,8 +228,8 @@ module inst_decoder
 								bus_src_sel	= `SEL_FPU;
 								write_dst_a	= ready;
 								write_FPU_f	= ready;
-								float_cmp	= FPU_OP == `FPU_OP_CMP;
-								write_ALU_f	= ready && float_cmp;
+								sel_FPU_f	= FPU_OP == `FPU_OP_CMP;
+								write_ALU_f	= ready && sel_FPU_f;
 								stall		= !ready;
 							end
 					endcase

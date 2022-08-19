@@ -1,7 +1,61 @@
-.Xil/
-*.cache/
-*.hw/
-*.ip_user_files/
-*.runs/
-*.sim/
-*.dcp
+# exclude all
+*
+!*.hw
+!*.runs
+!*.sim
+
+# except...
+# HDL files
+!*.vhd
+!*.v
+!*.vh
+!*.sv
+!*.svh
+!*.bd
+!*.edif
+
+# IP files
+!*.xci
+!*.dcp
+!*.vds
+!*.pb
+!*.ui
+!*.ooc
+
+# constraint files
+!*.xdc
+
+# tcl files
+!*.tcl
+
+# memory initialization files
+!*.coe
+
+# project files
+!*.xpr
+!*.xml
+
+# C files
+!*.c
+!*.h
+!*.elf
+!*.bmm
+!*.xmp
+
+# waveforms
+!*.wcfg
+
+# system generator
+!*.mdl
+!*.slx
+!*.bxml
+
+# MIG
+!*.prj
+!*.mem
+
+# reportfiles
+!*.rpt
+!*.txt
+!*.vdi
+

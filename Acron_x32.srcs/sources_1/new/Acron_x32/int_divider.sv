@@ -9,14 +9,18 @@ module int_divider
 	input	logic			clk,
 	input	logic			reset,
 	input	logic			load,
-	
+
 	input	logic	[1:0]	op,
 
 	input	logic	[n-1:0]	a,
 	input	logic	[n-1:0]	b,
 
 	output	logic	[n-1:0]	y,
-	
+	output	logic			C,
+	output	logic			Z,
+	output	logic			N,
+	output	logic			S,
+
 	output	logic			ready
 );
 
@@ -25,14 +29,19 @@ module int_divider
 	logic	[n-1:0]	reg_res;
 	logic	[n:0]	reg_rem;
 	logic			reg_sgn;
-	
+
 	logic	[n:0]	acc [m:0];
 	logic	[m-1:0]	q;
-	
+
 	integer			counter;
 
 	enum	logic	{IDLE, CALC} state;
-	
+
+	assign			C = ~|reg_b;
+	assign			Z = ~|y;
+	assign			N = y[n-1];
+	assign			S = reg_sgn;
+
 	always_comb begin
 		case (reg_op)
 		`UDIV: y = reg_res;
@@ -53,7 +62,7 @@ module int_divider
 			state	<= IDLE;
 			ready	<= 1'b0;
 		end
-		
+
 		else if (load) begin
 			reg_op	<= op;
 			reg_rem	<= 0;
@@ -86,21 +95,21 @@ module int_divider
 			CALC:	begin
 						reg_res	<= (reg_res << m) | q;
 						reg_rem	<= acc[m];
-						
+
 						if (counter == n/m-1) begin
 							state	<= IDLE;
 							ready	<= 1'b1;
 						end
-						
+
 						else
 							counter	<= counter + 1;
 					end
 		endcase
 	end
-	
+
 	always_comb begin
 		acc[0]	= reg_rem;
-		
+
 		for (integer i = 1; i <= m; i = i+1) begin
 			acc[i]	= {acc[i-1][n-1:0], reg_res[n-i]} - {1'b0, reg_b};
 			q[m-i]	= !acc[i][n];

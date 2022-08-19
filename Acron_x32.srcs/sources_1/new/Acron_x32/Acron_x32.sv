@@ -78,7 +78,9 @@ module Acron_x32
 	logic			jump;
 
 	logic			sel_imm;
-	logic			float_cmp;
+	logic			sel_MUL_flags;
+	logic			sel_DIV_flags;
+	logic			sel_FPU_flags;
 
 	// control unit + instruction decoder
 	logic	[3:0]	step_counter;
@@ -101,13 +103,19 @@ module Acron_x32
 	logic			GIE;
 	logic			set_GIE;
 	logic			clr_GIE;
+	
+	logic			C;		logic	C_flag;
+	logic			Z;		logic	Z_flag;
+	logic			N;		logic	N_flag;
+	logic			V;		logic	V_flag;
+	logic			S;		logic	S_flag;
 
-	// ALU flags
-	logic			ALU_C;	logic	C_flag;
-	logic			ALU_Z;	logic	Z_flag;
-	logic			ALU_N;	logic	N_flag;
-	logic			ALU_V;	logic	V_flag;
-	logic			ALU_S;	logic	S_flag;
+	// ALU flags			// MUL flags	// DIV flags
+	logic			ALU_C;	logic	MUL_C;	logic	DIV_C;
+	logic			ALU_Z;	logic	MUL_Z;	logic	DIV_Z;
+	logic			ALU_N;	logic	MUL_N;	logic	DIV_N;
+	logic			ALU_V;	
+	logic			ALU_S;	logic	MUL_S;	logic	DIV_S;
 
 	// FPU flags
 	logic			IV;
@@ -165,6 +173,41 @@ module Acron_x32
 		`SEL_MEM:	data_bus = dmem_din;
 		default:	data_bus = ALU_out;
 		endcase
+	end
+	
+	// flag multiplexer
+	always_comb begin
+		if (sel_MUL_flags) begin
+			C = MUL_C;
+			Z = MUL_Z;
+			N = MUL_N;
+			V = 1'b0;
+			S = MUL_S;
+		end
+		
+		else if (sel_DIV_flags) begin
+			C = DIV_C;
+			Z = DIV_Z;
+			N = DIV_N;
+			V = 1'b0;
+			S = DIV_S;
+		end
+		
+		else if (sel_FPU_flags) begin
+			C = FPU_C;
+			Z = FPU_Z;
+			N = FPU_N;
+			V = FPU_V;
+			S = FPU_S;
+		end
+		
+		else begin
+			C = ALU_C;
+			Z = ALU_Z;
+			N = ALU_N;
+			V = ALU_V;
+			S = ALU_S;
+		end
 	end
 
 	// memory controller
@@ -278,6 +321,10 @@ module Acron_x32
 		.b(b),
 
 		.y(MUL_out),
+		.C(MUL_C),
+		.Z(MUL_Z),
+		.N(MUL_N),
+		.S(MUL_S),
 
 		.ready(ready_MUL)
 	);
@@ -294,6 +341,10 @@ module Acron_x32
 		.b(b),
 
 		.y(DIV_out),
+		.C(DIV_C),
+		.Z(DIV_Z),
+		.N(DIV_N),
+		.S(DIV_S),
 
 		.ready(ready_DIV)
 	);
@@ -348,11 +399,11 @@ module Acron_x32
 		.wait_int(wait_int),
 
 		// ALU flags
-		.C(float_cmp ? FPU_C : ALU_C),
-		.N(float_cmp ? FPU_N : ALU_N),
-		.Z(float_cmp ? FPU_Z : ALU_Z),
-		.V(float_cmp ? FPU_V : ALU_V),
-		.S(float_cmp ? FPU_S : ALU_S),
+		.C(C),
+		.N(N),
+		.Z(Z),
+		.V(V),
+		.S(S),
 
 		// FPU flags
 		.IV(IV),
@@ -449,7 +500,9 @@ module Acron_x32
 		.jump_ena(jump_ena),
 		.src_b_ena(src_b_ena),
 		.sel_imm(sel_imm),
-		.float_cmp(float_cmp),
+		.sel_MUL_f(sel_MUL_flags),
+		.sel_DIV_f(sel_DIV_flags),
+		.sel_FPU_f(sel_FPU_flags),
 
 		.load_MUL(load_MUL),
 		.load_DIV(load_DIV),
