@@ -1,0 +1,242 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
+| Date         : Tue Aug  9 02:43:28 2022
+| Host         : Julian-PC running 64-bit Service Pack 1  (build 7601)
+| Command      : report_control_sets -verbose -file FPGA_top_control_sets_placed.rpt
+| Design       : FPGA_top
+| Device       : xc7z010
+-------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |   164 |
+|    Minimum number of control sets                        |   164 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |   117 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |   164 |
+| >= 0 to < 4        |     3 |
+| >= 4 to < 6        |     7 |
+| >= 6 to < 8        |     1 |
+| >= 8 to < 10       |    68 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     1 |
+| >= 14 to < 16      |     0 |
+| >= 16              |    84 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              12 |            4 |
+| No           | No                    | Yes                    |             120 |           70 |
+| No           | Yes                   | No                     |              24 |            7 |
+| Yes          | No                    | No                     |               8 |            4 |
+| Yes          | No                    | Yes                    |            3591 |         1735 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++--------------------------------------+--------------------------------------------------------------------------------------+------------------+------------------+----------------+
+|             Clock Signal             |                                     Enable Signal                                    | Set/Reset Signal | Slice Load Count | Bel Load Count |
++--------------------------------------+--------------------------------------------------------------------------------------+------------------+------------------+----------------+
+| ~MMCM_inst/inst/clk_out1             |                                                                                      | reset_reg_n_0    |                1 |              1 |
+|  MMCM_inst/inst/clk_out1             |                                                                                      |                  |                2 |              2 |
+| ~MMCM_inst/inst/clk_out1             |                                                                                      |                  |                1 |              2 |
+| ~MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/SC[3]_i_1_n_0                                       | reset_reg_n_0    |                2 |              4 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/FPU_inst/float_arithmetic_inst/float_divider_inst/counter[3]_i_1_n_0  | reset_reg_n_0    |                2 |              4 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/ALU_ena                                             | reset_reg_n_0    |                4 |              5 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/FPU_ena                                             | reset_reg_n_0    |                4 |              5 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/transmitter/tx_fifo_stack/read_ptr[4]_i_1_n_0                              | reset_reg_n_0    |                3 |              5 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/receiver/rx_fifo_stack/write_ptr[4]_i_1__0_n_0                             | reset_reg_n_0    |                2 |              5 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/tx_clear_reg_rep__0_6[0]                            | reset_reg_n_0    |                2 |              5 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/receiver/rx_fifo_stack/read_ptr[4]_i_1__0_n_0                              | reset_reg_n_0    |                2 |              6 |
+| ~MMCM_inst/inst/clk_out1             | mode_btn_samples                                                                     |                  |                4 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/transmitter/tx_fifo_stack/stack[9][7]_i_1_n_0                              | reset_reg_n_0    |                4 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/transmitter/tx_fifo_stack/stack[8][7]_i_1_n_0                              | reset_reg_n_0    |                4 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/transmitter/tx_fifo_stack/stack[7][7]_i_1_n_0                              | reset_reg_n_0    |                4 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/transmitter/tx_fifo_stack/stack[6][7]_i_1_n_0                              | reset_reg_n_0    |                5 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/transmitter/tx_fifo_stack/stack[5][7]_i_1_n_0                              | reset_reg_n_0    |                4 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/transmitter/tx_fifo_stack/stack[4][7]_i_1_n_0                              | reset_reg_n_0    |                3 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/transmitter/tx_fifo_stack/stack[3][7]_i_1_n_0                              | reset_reg_n_0    |                4 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/transmitter/tx_fifo_stack/stack[31][7]_i_1_n_0                             | reset_reg_n_0    |                3 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/transmitter/tx_fifo_stack/stack[28][7]_i_1_n_0                             | reset_reg_n_0    |                3 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/transmitter/tx_fifo_stack/stack[30][7]_i_1_n_0                             | reset_reg_n_0    |                3 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/transmitter/tx_fifo_stack/stack[2][7]_i_1_n_0                              | reset_reg_n_0    |                2 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/transmitter/tx_fifo_stack/stack[29][7]_i_1_n_0                             | reset_reg_n_0    |                3 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/transmitter/tx_fifo_stack/stack[27][7]_i_1_n_0                             | reset_reg_n_0    |                4 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/transmitter/tx_fifo_stack/stack[26][7]_i_1_n_0                             | reset_reg_n_0    |                5 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/transmitter/tx_fifo_stack/stack[25][7]_i_1_n_0                             | reset_reg_n_0    |                4 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/transmitter/tx_fifo_stack/stack[24][7]_i_1_n_0                             | reset_reg_n_0    |                4 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/transmitter/tx_fifo_stack/stack[23][7]_i_1_n_0                             | reset_reg_n_0    |                4 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/transmitter/tx_fifo_stack/stack[22][7]_i_1_n_0                             | reset_reg_n_0    |                4 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/transmitter/tx_fifo_stack/stack[21][7]_i_1_n_0                             | reset_reg_n_0    |                3 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/transmitter/tx_fifo_stack/stack[20][7]_i_1_n_0                             | reset_reg_n_0    |                3 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/transmitter/tx_fifo_stack/stack[1][7]_i_1_n_0                              | reset_reg_n_0    |                3 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/transmitter/tx_fifo_stack/stack[19][7]_i_1_n_0                             | reset_reg_n_0    |                3 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/transmitter/tx_fifo_stack/stack[18][7]_i_1_n_0                             | reset_reg_n_0    |                3 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/transmitter/tx_fifo_stack/stack[17][7]_i_1_n_0                             | reset_reg_n_0    |                3 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/transmitter/tx_fifo_stack/stack[16][7]_i_1_n_0                             | reset_reg_n_0    |                4 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/transmitter/tx_fifo_stack/stack[15][7]_i_1_n_0                             | reset_reg_n_0    |                2 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/transmitter/tx_fifo_stack/stack[14][7]_i_1_n_0                             | reset_reg_n_0    |                3 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/transmitter/tx_fifo_stack/stack[13][7]_i_1_n_0                             | reset_reg_n_0    |                3 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/transmitter/tx_fifo_stack/stack[12][7]_i_1_n_0                             | reset_reg_n_0    |                3 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/transmitter/tx_fifo_stack/stack[11][7]_i_1_n_0                             | reset_reg_n_0    |                3 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/transmitter/tx_fifo_stack/stack[10][7]_i_1_n_0                             | reset_reg_n_0    |                3 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/transmitter/tx_fifo_stack/stack[0][7]_i_1_n_0                              | reset_reg_n_0    |                4 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/receiver/rx_fifo_stack/stack[10][7]_i_1__0_n_0                             | reset_reg_n_0    |                4 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/receiver/data                                                              | reset_reg_n_0    |                3 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/receiver/rx_fifo_stack/stack[0][7]_i_1__0_n_0                              | reset_reg_n_0    |                4 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/receiver/rx_fifo_stack/stack[9][7]_i_1__0_n_0                              | reset_reg_n_0    |                3 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/receiver/rx_fifo_stack/stack[8][7]_i_1__0_n_0                              | reset_reg_n_0    |                4 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/receiver/rx_fifo_stack/stack[7][7]_i_1__0_n_0                              | reset_reg_n_0    |                1 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/receiver/rx_fifo_stack/stack[6][7]_i_1__0_n_0                              | reset_reg_n_0    |                3 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/receiver/rx_fifo_stack/stack[5][7]_i_1__0_n_0                              | reset_reg_n_0    |                4 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/receiver/rx_fifo_stack/stack[4][7]_i_1__0_n_0                              | reset_reg_n_0    |                2 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/receiver/rx_fifo_stack/stack[3][7]_i_1__0_n_0                              | reset_reg_n_0    |                5 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/receiver/rx_fifo_stack/stack[31][7]_i_1__0_n_0                             | reset_reg_n_0    |                4 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/receiver/rx_fifo_stack/stack[30][7]_i_1__0_n_0                             | reset_reg_n_0    |                3 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/receiver/rx_fifo_stack/stack[2][7]_i_1__0_n_0                              | reset_reg_n_0    |                4 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/receiver/rx_fifo_stack/stack[29][7]_i_1__0_n_0                             | reset_reg_n_0    |                2 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/receiver/rx_fifo_stack/stack[28][7]_i_1__0_n_0                             | reset_reg_n_0    |                2 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/receiver/rx_fifo_stack/stack[27][7]_i_1__0_n_0                             | reset_reg_n_0    |                2 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/receiver/rx_fifo_stack/stack[26][7]_i_1__0_n_0                             | reset_reg_n_0    |                4 |              8 |
+|  MMCM_inst/inst/clk_out1_MMCM_en_clk |                                                                                      |                  |                1 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/receiver/rx_fifo_stack/stack[23][7]_i_1__0_n_0                             | reset_reg_n_0    |                3 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/receiver/rx_fifo_stack/stack[25][7]_i_1__0_n_0                             | reset_reg_n_0    |                5 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/receiver/rx_fifo_stack/stack[24][7]_i_1__0_n_0                             | reset_reg_n_0    |                3 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/receiver/rx_fifo_stack/stack[22][7]_i_1__0_n_0                             | reset_reg_n_0    |                2 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/receiver/rx_fifo_stack/stack[21][7]_i_1__0_n_0                             | reset_reg_n_0    |                3 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/receiver/rx_fifo_stack/stack[20][7]_i_1__0_n_0                             | reset_reg_n_0    |                2 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/receiver/rx_fifo_stack/stack[1][7]_i_1__0_n_0                              | reset_reg_n_0    |                5 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/receiver/rx_fifo_stack/stack[19][7]_i_1__0_n_0                             | reset_reg_n_0    |                2 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/receiver/rx_fifo_stack/stack[18][7]_i_1__0_n_0                             | reset_reg_n_0    |                2 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/receiver/rx_fifo_stack/stack[17][7]_i_1__0_n_0                             | reset_reg_n_0    |                4 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/receiver/rx_fifo_stack/stack[16][7]_i_1__0_n_0                             | reset_reg_n_0    |                3 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/receiver/rx_fifo_stack/stack[15][7]_i_1__0_n_0                             | reset_reg_n_0    |                2 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/receiver/rx_fifo_stack/stack[14][7]_i_1__0_n_0                             | reset_reg_n_0    |                3 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/receiver/rx_fifo_stack/stack[13][7]_i_1__0_n_0                             | reset_reg_n_0    |                2 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/receiver/rx_fifo_stack/stack[12][7]_i_1__0_n_0                             | reset_reg_n_0    |                3 |              8 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/receiver/rx_fifo_stack/stack[11][7]_i_1__0_n_0                             | reset_reg_n_0    |                5 |              8 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/tx_watermark[5]_i_5_0                               | reset_reg_n_0    |                4 |              9 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/rx_watermark[5]_i_4_0                               | reset_reg_n_0    |                9 |             13 |
+| ~MMCM_inst/inst/clk_out1             |                                                                                      | mode_btn_samples |                7 |             24 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/FPU_inst/float_arithmetic_inst/float_adder_inst/reg_man_b[23]_i_1_n_0 | reset_reg_n_0    |               12 |             25 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/transmitter/counter[24]_i_1__0_n_0                                         | reset_reg_n_0    |                8 |             25 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/FPU_inst/float_arithmetic_inst/float_adder_inst/sum0                  | reset_reg_n_0    |                8 |             25 |
+|  MMCM_inst/inst/clk_out1             | uart_inst/receiver/counter                                                           | reset_reg_n_0    |                9 |             25 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/E[0]                                                | reset_reg_n_0    |               15 |             28 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[20]_13[0]                                    | reset_reg_n_0    |               17 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[3]_1[0]                                      | reset_reg_n_0    |               18 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[3]_0[0]                                      | reset_reg_n_0    |               19 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/int_divider_inst/counter0                                             | reset_reg_n_0    |                8 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/int_multiplier_inst/counter0                                          | reset_reg_n_0    |                8 |             32 |
+| ~MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR[31]_i_1_n_0                                      | reset_reg_n_0    |               20 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/PC[0]_i_1_n_0                                       | reset_reg_n_0    |                8 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/int_taken                                           | reset_reg_n_0    |               18 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[24]_4[0]                                     | reset_reg_n_0    |               18 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[22]_6[0]                                     | reset_reg_n_0    |               22 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[0]_2[0]                                      | reset_reg_n_0    |               18 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[1]_3[0]                                      | reset_reg_n_0    |               16 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[1]_2[0]                                      | reset_reg_n_0    |               20 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[1]_1[0]                                      | reset_reg_n_0    |               17 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[1]_0[0]                                      | reset_reg_n_0    |               13 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[0]_7[0]                                      | reset_reg_n_0    |               12 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[0]_6[0]                                      | reset_reg_n_0    |               19 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[0]_5[0]                                      | reset_reg_n_0    |               16 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[0]_4[0]                                      | reset_reg_n_0    |               17 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[0]_3[0]                                      | reset_reg_n_0    |               14 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[0]_1[0]                                      | reset_reg_n_0    |               18 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[0]_0[0]                                      | reset_reg_n_0    |               16 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/registers[9][31]_i_3_0[0]                           | reset_reg_n_0    |               17 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[5]_9[0]                                      | reset_reg_n_0    |               19 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[5]_8[0]                                      | reset_reg_n_0    |               16 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[5]_7[0]                                      | reset_reg_n_0    |               19 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[5]_6[0]                                      | reset_reg_n_0    |               17 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[5]_5[0]                                      | reset_reg_n_0    |               18 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[5]_4[0]                                      | reset_reg_n_0    |               17 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[5]_31[0]                                     | reset_reg_n_0    |               17 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[5]_30[0]                                     | reset_reg_n_0    |               15 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[5]_3[0]                                      | reset_reg_n_0    |               20 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[5]_29[0]                                     | reset_reg_n_0    |               18 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[5]_28[0]                                     | reset_reg_n_0    |               14 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[5]_27[0]                                     | reset_reg_n_0    |               18 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[5]_26[0]                                     | reset_reg_n_0    |               15 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[5]_25[0]                                     | reset_reg_n_0    |               16 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[5]_24[0]                                     | reset_reg_n_0    |               17 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[5]_23[0]                                     | reset_reg_n_0    |               16 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[5]_22[0]                                     | reset_reg_n_0    |               17 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[5]_21[0]                                     | reset_reg_n_0    |               15 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[5]_20[0]                                     | reset_reg_n_0    |               17 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[5]_2[0]                                      | reset_reg_n_0    |               17 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[5]_19[0]                                     | reset_reg_n_0    |               16 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[5]_18[0]                                     | reset_reg_n_0    |               16 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[5]_17[0]                                     | reset_reg_n_0    |               22 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[5]_16[0]                                     | reset_reg_n_0    |               20 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[5]_15[0]                                     | reset_reg_n_0    |               19 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[5]_14[0]                                     | reset_reg_n_0    |               16 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[5]_13[0]                                     | reset_reg_n_0    |               15 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[5]_12[0]                                     | reset_reg_n_0    |               16 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[5]_11[0]                                     | reset_reg_n_0    |               16 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[5]_10[0]                                     | reset_reg_n_0    |               18 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[5]_1[0]                                      | reset_reg_n_0    |               16 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[5]_0[0]                                      | reset_reg_n_0    |               15 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[4]_9[0]                                      | reset_reg_n_0    |               15 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[4]_8[0]                                      | reset_reg_n_0    |               19 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[4]_4[0]                                      | reset_reg_n_0    |               13 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[4]_7[0]                                      | reset_reg_n_0    |               14 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[4]_6[0]                                      | reset_reg_n_0    |               16 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[4]_5[0]                                      | reset_reg_n_0    |               15 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[4]_3[0]                                      | reset_reg_n_0    |               21 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[4]_2[0]                                      | reset_reg_n_0    |               22 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[4]_10[0]                                     | reset_reg_n_0    |               18 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[4]_1[0]                                      | reset_reg_n_0    |               19 |             32 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IR_reg[4]_0[0]                                      | reset_reg_n_0    |               21 |             32 |
+| ~MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/IM[31]_i_1_n_0                                      | reset_reg_n_0    |               20 |             33 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/FPU_inst/float_arithmetic_inst/float_adder_inst/man_y0                | reset_reg_n_0    |               25 |             34 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/load_DIV                                            | reset_reg_n_0    |               12 |             35 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/FPU_inst/float_arithmetic_inst/float_divider_inst/E[0]                | reset_reg_n_0    |               21 |             44 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/state_reg[0]                                        | reset_reg_n_0    |               19 |             48 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/state_reg_0[0]                                      | reset_reg_n_0    |               20 |             51 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/load_MUL                                            | reset_reg_n_0    |               25 |             62 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/int_multiplier_inst/reg_res[63]_i_1_n_0                               | reset_reg_n_0    |               26 |             64 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/int_divider_inst/reg_rem                                              | reset_reg_n_0    |               31 |             64 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/FPU_inst/float_arithmetic_inst/float_sqrt_inst/reg_res[25]_i_1__3_n_0 | reset_reg_n_0    |               23 |             79 |
+|  MMCM_inst/inst/clk_out1             |                                                                                      | reset_reg_n_0    |               69 |            119 |
+|  MMCM_inst/inst/clk_out1             | Acron_x32_inst/control_unit_inst/load_FPU                                            | reset_reg_n_0    |              109 |            256 |
++--------------------------------------+--------------------------------------------------------------------------------------+------------------+------------------+----------------+
+
+

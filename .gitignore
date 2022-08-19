@@ -1,8 +1,9 @@
 # exclude all
 *
-!*.hw
-!*.runs
-!*.sim
+!*/
+*.cache/
+*.ip_user_files
+!.gitignore
 
 # except...
 # HDL files

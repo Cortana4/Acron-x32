@@ -1,0 +1,1172 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Tue Aug  9 02:32:06 2022
+# Process ID: 6192
+# Current directory: D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.runs/synth_1
+# Command line: vivado.exe -log FPGA_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source FPGA_top.tcl
+# Log file: D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.runs/synth_1/FPGA_top.vds
+# Journal file: D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source FPGA_top.tcl -notrace
+Command: synth_design -top FPGA_top -part xc7z010clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 6352 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1008.172 ; gain = 238.566
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'FPGA_top' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/FPGA_top.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'MMCM' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.runs/synth_1/.Xil/Vivado-6192-Julian-PC/realtime/MMCM_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'MMCM' (1#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.runs/synth_1/.Xil/Vivado-6192-Julian-PC/realtime/MMCM_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'ROM' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.runs/synth_1/.Xil/Vivado-6192-Julian-PC/realtime/ROM_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ROM' (2#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.runs/synth_1/.Xil/Vivado-6192-Julian-PC/realtime/ROM_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'RAM' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.runs/synth_1/.Xil/Vivado-6192-Julian-PC/realtime/RAM_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'RAM' (3#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.runs/synth_1/.Xil/Vivado-6192-Julian-PC/realtime/RAM_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'Acron_x32' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/Acron_x32.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'register_file' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/register_file.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'register_file' (4#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/register_file.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'ALU' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/ALU.sv:3]
+INFO: [Synth 8-226] default block is never used [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/ALU.sv:24]
+INFO: [Synth 8-6155] done synthesizing module 'ALU' (5#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/ALU.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'int_multiplier' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/int_multiplier.sv:3]
+	Parameter n bound to: 32 - type: integer 
+	Parameter m bound to: 8 - type: integer 
+WARNING: [Synth 8-3936] Found unconnected internal register 'acc_reg' and it is trimmed from '41' to '40' bits. [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/int_multiplier.sv:103]
+INFO: [Synth 8-6155] done synthesizing module 'int_multiplier' (6#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/int_multiplier.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'int_divider' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/int_divider.sv:3]
+	Parameter n bound to: 32 - type: integer 
+	Parameter m bound to: 8 - type: integer 
+WARNING: [Synth 8-3936] Found unconnected internal register 'acc_reg[7]' and it is trimmed from '33' to '32' bits. [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/int_divider.sv:111]
+WARNING: [Synth 8-3936] Found unconnected internal register 'acc_reg[6]' and it is trimmed from '33' to '32' bits. [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/int_divider.sv:111]
+WARNING: [Synth 8-3936] Found unconnected internal register 'acc_reg[5]' and it is trimmed from '33' to '32' bits. [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/int_divider.sv:111]
+WARNING: [Synth 8-3936] Found unconnected internal register 'acc_reg[4]' and it is trimmed from '33' to '32' bits. [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/int_divider.sv:111]
+WARNING: [Synth 8-3936] Found unconnected internal register 'acc_reg[3]' and it is trimmed from '33' to '32' bits. [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/int_divider.sv:111]
+WARNING: [Synth 8-3936] Found unconnected internal register 'acc_reg[2]' and it is trimmed from '33' to '32' bits. [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/int_divider.sv:111]
+WARNING: [Synth 8-3936] Found unconnected internal register 'acc_reg[1]' and it is trimmed from '33' to '32' bits. [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/int_divider.sv:111]
+INFO: [Synth 8-6155] done synthesizing module 'int_divider' (7#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/int_divider.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'FPU' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/FPU.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'splitter' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/splitter.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'splitter' (8#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/splitter.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'pre_normalizer' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/pre_normalizer.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'leading_zero_counter_24' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/leading_zero_counter_24.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'leading_zero_counter_4' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/leading_zero_counter_4.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'leading_zero_counter_4' (9#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/leading_zero_counter_4.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'leading_zero_counter_24' (10#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/leading_zero_counter_24.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'pre_normalizer' (11#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/pre_normalizer.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'float_arithmetic' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/float_arithmetic.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'float_adder' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/float_adder.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'rshifter' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/rshifter.sv:1]
+	Parameter n bound to: 26 - type: integer 
+	Parameter s bound to: 5 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rshifter_static' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/rshifter_static.sv:1]
+	Parameter n bound to: 26 - type: integer 
+	Parameter offset bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rshifter_static' (12#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/rshifter_static.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'rshifter_static__parameterized0' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/rshifter_static.sv:1]
+	Parameter n bound to: 26 - type: integer 
+	Parameter offset bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rshifter_static__parameterized0' (12#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/rshifter_static.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'rshifter_static__parameterized1' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/rshifter_static.sv:1]
+	Parameter n bound to: 26 - type: integer 
+	Parameter offset bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rshifter_static__parameterized1' (12#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/rshifter_static.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'rshifter_static__parameterized2' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/rshifter_static.sv:1]
+	Parameter n bound to: 26 - type: integer 
+	Parameter offset bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rshifter_static__parameterized2' (12#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/rshifter_static.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'rshifter_static__parameterized3' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/rshifter_static.sv:1]
+	Parameter n bound to: 26 - type: integer 
+	Parameter offset bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rshifter_static__parameterized3' (12#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/rshifter_static.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'rshifter' (13#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/rshifter.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'float_adder' (14#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/float_adder.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'float_multiplier' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/float_multiplier.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'float_multiplier' (15#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/float_multiplier.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'float_divider' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/float_divider.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'float_divider' (16#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/float_divider.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'float_sqrt' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/float_sqrt.sv:1]
+WARNING: [Synth 8-3936] Found unconnected internal register 'acc_reg[0]' and it is trimmed from '29' to '26' bits. [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/float_sqrt.sv:123]
+WARNING: [Synth 8-3936] Found unconnected internal register 'acc_reg[1]' and it is trimmed from '29' to '28' bits. [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/float_sqrt.sv:123]
+INFO: [Synth 8-6155] done synthesizing module 'float_sqrt' (17#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/float_sqrt.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'post_processing' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/post_processing.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'rshifter__parameterized0' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/rshifter.sv:1]
+	Parameter n bound to: 25 - type: integer 
+	Parameter s bound to: 5 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rshifter_static__parameterized4' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/rshifter_static.sv:1]
+	Parameter n bound to: 25 - type: integer 
+	Parameter offset bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rshifter_static__parameterized4' (17#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/rshifter_static.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'rshifter_static__parameterized5' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/rshifter_static.sv:1]
+	Parameter n bound to: 25 - type: integer 
+	Parameter offset bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rshifter_static__parameterized5' (17#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/rshifter_static.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'rshifter_static__parameterized6' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/rshifter_static.sv:1]
+	Parameter n bound to: 25 - type: integer 
+	Parameter offset bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rshifter_static__parameterized6' (17#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/rshifter_static.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'rshifter_static__parameterized7' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/rshifter_static.sv:1]
+	Parameter n bound to: 25 - type: integer 
+	Parameter offset bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rshifter_static__parameterized7' (17#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/rshifter_static.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'rshifter_static__parameterized8' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/rshifter_static.sv:1]
+	Parameter n bound to: 25 - type: integer 
+	Parameter offset bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rshifter_static__parameterized8' (17#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/rshifter_static.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'rshifter__parameterized0' (17#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/rshifter.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'rounding_logic' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/rounding_logic.sv:3]
+	Parameter n bound to: 23 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rounding_logic' (18#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/rounding_logic.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'post_processing' (19#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/post_processing.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'float_arithmetic' (20#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/float_arithmetic.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'sign_modifier' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/sign_modifier.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'sign_modifier' (21#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/sign_modifier.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'ftoi_converter' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/ftoi_converter.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'float_comparator_comb' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/float_comparator_comb.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'float_comparator_comb' (22#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/float_comparator_comb.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'rshifter__parameterized1' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/rshifter.sv:1]
+	Parameter n bound to: 33 - type: integer 
+	Parameter s bound to: 6 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rshifter_static__parameterized9' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/rshifter_static.sv:1]
+	Parameter n bound to: 33 - type: integer 
+	Parameter offset bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rshifter_static__parameterized9' (22#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/rshifter_static.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'rshifter_static__parameterized10' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/rshifter_static.sv:1]
+	Parameter n bound to: 33 - type: integer 
+	Parameter offset bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rshifter_static__parameterized10' (22#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/rshifter_static.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'rshifter_static__parameterized11' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/rshifter_static.sv:1]
+	Parameter n bound to: 33 - type: integer 
+	Parameter offset bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rshifter_static__parameterized11' (22#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/rshifter_static.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'rshifter_static__parameterized12' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/rshifter_static.sv:1]
+	Parameter n bound to: 33 - type: integer 
+	Parameter offset bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rshifter_static__parameterized12' (22#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/rshifter_static.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'rshifter_static__parameterized13' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/rshifter_static.sv:1]
+	Parameter n bound to: 33 - type: integer 
+	Parameter offset bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rshifter_static__parameterized13' (22#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/rshifter_static.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'rshifter_static__parameterized14' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/rshifter_static.sv:1]
+	Parameter n bound to: 33 - type: integer 
+	Parameter offset bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rshifter_static__parameterized14' (22#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/rshifter_static.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'rshifter__parameterized1' (22#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/rshifter.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'rounding_logic__parameterized0' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/rounding_logic.sv:3]
+	Parameter n bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rounding_logic__parameterized0' (22#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/rounding_logic.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'ftoi_converter' (23#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/ftoi_converter.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'itof_converter' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/itof_converter.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'leading_zero_counter_32' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/leading_zero_counter_32.sv:2]
+INFO: [Synth 8-226] default block is never used [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/leading_zero_counter_32.sv:30]
+INFO: [Synth 8-6155] done synthesizing module 'leading_zero_counter_32' (24#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/leading_zero_counter_32.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'itof_converter' (25#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/itof_converter.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'float_comparator_seq' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/float_comparator_seq.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'float_comparator_seq' (26#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/float_comparator_seq.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'FPU' (27#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/FPU.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'status_register' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/status_register.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'status_register' (28#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/status_register.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'jump_logic' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/jump_logic.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'jump_logic' (29#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/jump_logic.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'control_unit' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/control_unit.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'control_unit' (30#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/control_unit.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'inst_decoder' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/inst_decoder.sv:4]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/inst_decoder.sv:124]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/inst_decoder.sv:138]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/inst_decoder.sv:156]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/inst_decoder.sv:181]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/inst_decoder.sv:201]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/inst_decoder.sv:219]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/inst_decoder.sv:254]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/inst_decoder.sv:281]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/inst_decoder.sv:102]
+INFO: [Synth 8-6155] done synthesizing module 'inst_decoder' (31#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/inst_decoder.sv:4]
+INFO: [Synth 8-6155] done synthesizing module 'Acron_x32' (32#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/Acron_x32.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'uart' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/UART/uart.sv:1]
+	Parameter BASE_ADDR bound to: 12288 - type: integer 
+	Parameter TX_ADDR_WIDTH bound to: 5 - type: integer 
+	Parameter RX_ADDR_WIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/UART/uart.sv:215]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/UART/uart.sv:318]
+INFO: [Synth 8-6157] synthesizing module 'uart_tx' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/UART/uart_tx.sv:1]
+	Parameter ADDR_WIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'fifo_stack' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/UART/fifo_stack.sv:1]
+	Parameter ADDR_WIDTH bound to: 5 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'fifo_stack' (33#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/UART/fifo_stack.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'uart_tx' (34#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/UART/uart_tx.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'uart_rx' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/UART/uart_rx.sv:1]
+	Parameter ADDR_WIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'uart_rx' (35#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/UART/uart_rx.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'uart' (36#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/UART/uart.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'FPGA_top' (37#1) [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/FPGA_top.sv:3]
+WARNING: [Synth 8-3331] design status_register has unconnected port SR_in[31]
+WARNING: [Synth 8-3331] design status_register has unconnected port SR_in[30]
+WARNING: [Synth 8-3331] design status_register has unconnected port SR_in[29]
+WARNING: [Synth 8-3331] design status_register has unconnected port SR_in[28]
+WARNING: [Synth 8-3331] design status_register has unconnected port SR_in[27]
+WARNING: [Synth 8-3331] design status_register has unconnected port SR_in[26]
+WARNING: [Synth 8-3331] design status_register has unconnected port SR_in[25]
+WARNING: [Synth 8-3331] design status_register has unconnected port SR_in[24]
+WARNING: [Synth 8-3331] design status_register has unconnected port SR_in[23]
+WARNING: [Synth 8-3331] design status_register has unconnected port SR_in[22]
+WARNING: [Synth 8-3331] design status_register has unconnected port SR_in[21]
+WARNING: [Synth 8-3331] design status_register has unconnected port SR_in[20]
+WARNING: [Synth 8-3331] design status_register has unconnected port SR_in[19]
+WARNING: [Synth 8-3331] design status_register has unconnected port SR_in[18]
+WARNING: [Synth 8-3331] design status_register has unconnected port SR_in[17]
+WARNING: [Synth 8-3331] design status_register has unconnected port SR_in[15]
+WARNING: [Synth 8-3331] design status_register has unconnected port SR_in[14]
+WARNING: [Synth 8-3331] design status_register has unconnected port SR_in[13]
+WARNING: [Synth 8-3331] design status_register has unconnected port SR_in[7]
+WARNING: [Synth 8-3331] design status_register has unconnected port SR_in[6]
+WARNING: [Synth 8-3331] design status_register has unconnected port SR_in[5]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1102.180 ; gain = 332.574
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1121.035 ; gain = 351.430
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1121.035 ; gain = 351.430
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.234 . Memory (MB): peak = 1121.035 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.runs/synth_1/.Xil/Vivado-6192-Julian-PC/MMCM/MMCM/MMCM_in_context.xdc] for cell 'MMCM_inst'
+Finished Parsing XDC File [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.runs/synth_1/.Xil/Vivado-6192-Julian-PC/MMCM/MMCM/MMCM_in_context.xdc] for cell 'MMCM_inst'
+Parsing XDC File [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.runs/synth_1/.Xil/Vivado-6192-Julian-PC/RAM/RAM/RAM_in_context.xdc] for cell 'RAM_inst'
+Finished Parsing XDC File [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.runs/synth_1/.Xil/Vivado-6192-Julian-PC/RAM/RAM/RAM_in_context.xdc] for cell 'RAM_inst'
+Parsing XDC File [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.runs/synth_1/.Xil/Vivado-6192-Julian-PC/ROM/ROM/ROM_in_context.xdc] for cell 'ROM_inst'
+Finished Parsing XDC File [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.runs/synth_1/.Xil/Vivado-6192-Julian-PC/ROM/ROM/ROM_in_context.xdc] for cell 'ROM_inst'
+Parsing XDC File [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/constrs_1/new/constraints.xdc]
+Finished Parsing XDC File [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/constrs_1/new/constraints.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/constrs_1/new/constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/FPGA_top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/FPGA_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1249.230 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.068 . Memory (MB): peak = 1249.230 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1249.230 ; gain = 479.625
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1249.230 ; gain = 479.625
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for ref_clk. (constraint file  D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.runs/synth_1/.Xil/Vivado-6192-Julian-PC/MMCM/MMCM/MMCM_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ref_clk. (constraint file  D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.runs/synth_1/.Xil/Vivado-6192-Julian-PC/MMCM/MMCM/MMCM_in_context.xdc, line 4).
+Applied set_property DONT_TOUCH = true for MMCM_inst. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for RAM_inst. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for ROM_inst. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1249.230 ; gain = 479.625
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4471] merging register 'reg_IE_reg' into 'reg_IV_reg' [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/FPU/ftoi_converter.sv:83]
+INFO: [Synth 8-5544] ROM "cmp_min" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.srcs/sources_1/new/Acron_x32/control_unit.sv:68]
+INFO: [Synth 8-5546] ROM "ret_int" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "wait_int" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "ALU_OP" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "set_GIE" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'uart_tx'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'uart_rx'
+INFO: [Synth 8-5545] ROM "flow_ctrl" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "tx_watermark" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "rx_watermark" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                              000 |                              000
+                   START |                              001 |                              001
+                    DATA |                              010 |                              010
+                  PARITY |                              011 |                              011
+                    STOP |                              100 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'uart_tx'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                              000 |                              000
+                   START |                              001 |                              001
+                    DATA |                              010 |                              010
+                  PARITY |                              011 |                              011
+                    STOP |                              100 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'uart_rx'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 1249.230 ; gain = 479.625
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     64 Bit       Adders := 1     
+	   8 Input     40 Bit       Adders := 1     
+	   2 Input     33 Bit       Adders := 5     
+	   3 Input     33 Bit       Adders := 9     
+	   4 Input     33 Bit       Adders := 1     
+	   2 Input     32 Bit       Adders := 11    
+	   6 Input     30 Bit       Adders := 1     
+	   3 Input     29 Bit       Adders := 2     
+	   3 Input     27 Bit       Adders := 2     
+	   2 Input     26 Bit       Adders := 1     
+	   2 Input     25 Bit       Adders := 11    
+	   3 Input     25 Bit       Adders := 2     
+	   2 Input     24 Bit       Adders := 4     
+	   2 Input     10 Bit       Adders := 11    
+	   3 Input     10 Bit       Adders := 3     
+	   2 Input      8 Bit       Adders := 2     
+	   2 Input      6 Bit       Adders := 2     
+	   3 Input      6 Bit       Adders := 2     
+	   2 Input      5 Bit       Adders := 9     
+	   2 Input      4 Bit       Adders := 2     
+	   2 Input      3 Bit       Adders := 2     
+	   2 Input      2 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 14    
++---XORs : 
+	                8 Bit    Wide XORs := 2     
++---Registers : 
+	               64 Bit    Registers := 1     
+	               48 Bit    Registers := 1     
+	               33 Bit    Registers := 1     
+	               32 Bit    Registers := 73    
+	               28 Bit    Registers := 1     
+	               27 Bit    Registers := 1     
+	               26 Bit    Registers := 3     
+	               25 Bit    Registers := 3     
+	               24 Bit    Registers := 7     
+	               23 Bit    Registers := 1     
+	               10 Bit    Registers := 7     
+	                8 Bit    Registers := 66    
+	                6 Bit    Registers := 2     
+	                5 Bit    Registers := 4     
+	                4 Bit    Registers := 4     
+	                3 Bit    Registers := 7     
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 114   
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 3     
+	   2 Input     48 Bit        Muxes := 2     
+	   4 Input     48 Bit        Muxes := 1     
+	   2 Input     39 Bit        Muxes := 1     
+	   2 Input     38 Bit        Muxes := 1     
+	   2 Input     37 Bit        Muxes := 1     
+	   2 Input     36 Bit        Muxes := 1     
+	   2 Input     35 Bit        Muxes := 1     
+	   2 Input     34 Bit        Muxes := 1     
+	   2 Input     33 Bit        Muxes := 9     
+	   2 Input     32 Bit        Muxes := 171   
+	   3 Input     32 Bit        Muxes := 6     
+	   4 Input     32 Bit        Muxes := 1     
+	   5 Input     32 Bit        Muxes := 1     
+	   2 Input     31 Bit        Muxes := 1     
+	   2 Input     29 Bit        Muxes := 1     
+	   2 Input     28 Bit        Muxes := 4     
+	   2 Input     27 Bit        Muxes := 5     
+	   4 Input     27 Bit        Muxes := 1     
+	   2 Input     26 Bit        Muxes := 12    
+	   4 Input     26 Bit        Muxes := 2     
+	   5 Input     26 Bit        Muxes := 1     
+	   2 Input     25 Bit        Muxes := 10    
+	   5 Input     25 Bit        Muxes := 2     
+	   2 Input     24 Bit        Muxes := 15    
+	   8 Input     24 Bit        Muxes := 1     
+	   5 Input     24 Bit        Muxes := 2     
+	   2 Input     23 Bit        Muxes := 2     
+	   9 Input     13 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 11    
+	   8 Input     10 Bit        Muxes := 2     
+	   5 Input     10 Bit        Muxes := 3     
+	   2 Input      8 Bit        Muxes := 196   
+	   5 Input      8 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 24    
+	   4 Input      6 Bit        Muxes := 3     
+	   5 Input      6 Bit        Muxes := 2     
+	  18 Input      6 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 6     
+	   2 Input      4 Bit        Muxes := 8     
+	  18 Input      4 Bit        Muxes := 3     
+	   2 Input      3 Bit        Muxes := 19    
+	  18 Input      3 Bit        Muxes := 4     
+	   5 Input      3 Bit        Muxes := 7     
+	   4 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 8     
+	   5 Input      2 Bit        Muxes := 1     
+	  18 Input      2 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	  10 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 818   
+	   4 Input      1 Bit        Muxes := 12    
+	   3 Input      1 Bit        Muxes := 3     
+	   6 Input      1 Bit        Muxes := 4     
+	   5 Input      1 Bit        Muxes := 22    
+	  18 Input      1 Bit        Muxes := 18    
+	   8 Input      1 Bit        Muxes := 1     
+	  10 Input      1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module FPGA_top 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     24 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 2     
+	               24 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 5     
+	   2 Input     24 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 1     
+Module register_file 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 61    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 124   
+	   2 Input      1 Bit        Muxes := 183   
+Module ALU 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     33 Bit       Adders := 3     
+	   3 Input     33 Bit       Adders := 1     
+	   4 Input     33 Bit       Adders := 1     
+	   2 Input     32 Bit       Adders := 2     
+	   2 Input      6 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 5     
++---Muxes : 
+	   2 Input      6 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module int_multiplier 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     64 Bit       Adders := 1     
+	   8 Input     40 Bit       Adders := 1     
+	   2 Input     33 Bit       Adders := 1     
+	   2 Input     32 Bit       Adders := 2     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	               64 Bit    Registers := 1     
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 3     
+	   2 Input     39 Bit        Muxes := 1     
+	   2 Input     38 Bit        Muxes := 1     
+	   2 Input     37 Bit        Muxes := 1     
+	   2 Input     36 Bit        Muxes := 1     
+	   2 Input     35 Bit        Muxes := 1     
+	   2 Input     34 Bit        Muxes := 1     
+	   2 Input     33 Bit        Muxes := 1     
+	   3 Input     32 Bit        Muxes := 2     
+	   2 Input     32 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 7     
+	   4 Input      1 Bit        Muxes := 1     
+Module int_divider 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     33 Bit       Adders := 8     
+	   2 Input     32 Bit       Adders := 4     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	               33 Bit    Registers := 1     
+	               32 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input     33 Bit        Muxes := 2     
+	   3 Input     32 Bit        Muxes := 2     
+	   2 Input     32 Bit        Muxes := 12    
+	   4 Input     32 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+Module pre_normalizer 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 2     
++---Muxes : 
+	   2 Input     24 Bit        Muxes := 2     
+	   2 Input     10 Bit        Muxes := 2     
+Module rshifter_static 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     26 Bit        Muxes := 1     
+Module rshifter_static__parameterized0 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     26 Bit        Muxes := 1     
+Module rshifter_static__parameterized1 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     26 Bit        Muxes := 1     
+Module rshifter_static__parameterized2 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     26 Bit        Muxes := 1     
+Module rshifter_static__parameterized3 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     26 Bit        Muxes := 1     
+Module float_adder 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     26 Bit       Adders := 1     
+	   2 Input     25 Bit       Adders := 1     
+	   3 Input     10 Bit       Adders := 2     
+	   2 Input     10 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 2     
++---Registers : 
+	               25 Bit    Registers := 1     
+	               24 Bit    Registers := 3     
+	               10 Bit    Registers := 3     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 8     
++---Muxes : 
+	   2 Input     26 Bit        Muxes := 1     
+	   2 Input     25 Bit        Muxes := 2     
+	   2 Input     24 Bit        Muxes := 7     
+	   8 Input     24 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 4     
+	   8 Input     10 Bit        Muxes := 2     
+	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   5 Input      2 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 19    
+	   4 Input      1 Bit        Muxes := 4     
+	   5 Input      1 Bit        Muxes := 2     
+Module float_multiplier 
+Detailed RTL Component Info : 
++---Adders : 
+	   6 Input     30 Bit       Adders := 1     
+	   2 Input     25 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 2     
+	   2 Input      2 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	               48 Bit    Registers := 1     
+	               24 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input     48 Bit        Muxes := 2     
+	   4 Input     48 Bit        Muxes := 1     
+	   2 Input     29 Bit        Muxes := 1     
+	   2 Input     28 Bit        Muxes := 1     
+	   2 Input     27 Bit        Muxes := 1     
+	   2 Input     26 Bit        Muxes := 1     
+	   2 Input     25 Bit        Muxes := 1     
+	   5 Input     24 Bit        Muxes := 1     
+	   2 Input     24 Bit        Muxes := 2     
+	   5 Input     10 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 20    
+Module float_divider 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     27 Bit       Adders := 2     
+	   3 Input     10 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	               27 Bit    Registers := 1     
+	               26 Bit    Registers := 1     
+	               24 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 6     
++---Muxes : 
+	   2 Input     27 Bit        Muxes := 4     
+	   4 Input     27 Bit        Muxes := 1     
+	   2 Input     26 Bit        Muxes := 1     
+	   4 Input     26 Bit        Muxes := 1     
+	   5 Input     24 Bit        Muxes := 1     
+	   2 Input     24 Bit        Muxes := 1     
+	   5 Input     10 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 19    
+Module float_sqrt 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     29 Bit       Adders := 2     
++---Registers : 
+	               28 Bit    Registers := 1     
+	               26 Bit    Registers := 2     
+	               10 Bit    Registers := 1     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input     28 Bit        Muxes := 3     
+	   2 Input     26 Bit        Muxes := 4     
+	   4 Input     26 Bit        Muxes := 1     
+	   5 Input     26 Bit        Muxes := 1     
+	   5 Input     10 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 13    
+Module rshifter_static__parameterized4 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     25 Bit        Muxes := 1     
+Module rshifter_static__parameterized5 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     25 Bit        Muxes := 1     
+Module rshifter_static__parameterized6 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     25 Bit        Muxes := 1     
+Module rshifter_static__parameterized7 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     25 Bit        Muxes := 1     
+Module rshifter_static__parameterized8 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     25 Bit        Muxes := 1     
+Module rounding_logic 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     24 Bit       Adders := 1     
+Module post_processing 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 3     
++---Registers : 
+	               23 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 9     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 3     
+	   2 Input     23 Bit        Muxes := 2     
+	   2 Input     10 Bit        Muxes := 3     
+	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+Module float_arithmetic 
+Detailed RTL Component Info : 
++---Registers : 
+	                3 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 15    
+Module sign_modifier 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 5     
+Module float_comparator_comb 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 7     
+Module rshifter_static__parameterized9 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     33 Bit        Muxes := 1     
+Module rshifter_static__parameterized10 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     33 Bit        Muxes := 1     
+Module rshifter_static__parameterized11 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     33 Bit        Muxes := 1     
+Module rshifter_static__parameterized12 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     33 Bit        Muxes := 1     
+Module rshifter_static__parameterized13 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     33 Bit        Muxes := 1     
+Module rshifter_static__parameterized14 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     33 Bit        Muxes := 1     
+Module rounding_logic__parameterized0 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     33 Bit       Adders := 1     
+Module ftoi_converter 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 7     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 4     
+	   3 Input     32 Bit        Muxes := 2     
+	   5 Input     32 Bit        Muxes := 1     
+	   2 Input     31 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 6     
+Module itof_converter 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 2     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 3     
+	   2 Input      8 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module float_comparator_seq 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module FPU 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 3     
+Module status_register 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 11    
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 17    
+	   5 Input      1 Bit        Muxes := 1     
+Module control_unit 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 3     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 5     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 7     
+Module inst_decoder 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      6 Bit        Muxes := 21    
+	   4 Input      6 Bit        Muxes := 3     
+	   5 Input      6 Bit        Muxes := 2     
+	  18 Input      6 Bit        Muxes := 1     
+	  18 Input      4 Bit        Muxes := 3     
+	   2 Input      4 Bit        Muxes := 5     
+	  18 Input      3 Bit        Muxes := 4     
+	   2 Input      3 Bit        Muxes := 12    
+	   5 Input      3 Bit        Muxes := 1     
+	   4 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 4     
+	  18 Input      2 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 33    
+	   4 Input      1 Bit        Muxes := 4     
+	  18 Input      1 Bit        Muxes := 18    
+	   8 Input      1 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 1     
+Module Acron_x32 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 8     
+	   9 Input     13 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 13    
+Module fifo_stack 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input      6 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 4     
++---Registers : 
+	                8 Bit    Registers := 32    
+	                5 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 97    
+	   2 Input      6 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 201   
+Module uart_tx 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     25 Bit       Adders := 4     
+	   2 Input      3 Bit       Adders := 1     
++---XORs : 
+	                8 Bit    Wide XORs := 1     
++---Registers : 
+	               25 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   5 Input     25 Bit        Muxes := 1     
+	   5 Input      3 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 6     
+Module uart_rx 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     25 Bit       Adders := 5     
+	   3 Input     25 Bit       Adders := 2     
+	   2 Input     24 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---XORs : 
+	                8 Bit    Wide XORs := 1     
++---Registers : 
+	               25 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                3 Bit    Registers := 2     
+	                1 Bit    Registers := 6     
++---Muxes : 
+	   2 Input     25 Bit        Muxes := 2     
+	   5 Input     25 Bit        Muxes := 1     
+	   5 Input      8 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 3     
+	   5 Input      3 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 3     
+	   5 Input      1 Bit        Muxes := 11    
+Module uart 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+	               24 Bit    Registers := 1     
+	                6 Bit    Registers := 2     
+	                1 Bit    Registers := 23    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	  10 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 17    
+	  10 Input      1 Bit        Muxes := 3     
+	   4 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3331] design status_register has unconnected port SR_in[31]
+WARNING: [Synth 8-3331] design status_register has unconnected port SR_in[30]
+WARNING: [Synth 8-3331] design status_register has unconnected port SR_in[29]
+WARNING: [Synth 8-3331] design status_register has unconnected port SR_in[28]
+WARNING: [Synth 8-3331] design status_register has unconnected port SR_in[27]
+WARNING: [Synth 8-3331] design status_register has unconnected port SR_in[26]
+WARNING: [Synth 8-3331] design status_register has unconnected port SR_in[25]
+WARNING: [Synth 8-3331] design status_register has unconnected port SR_in[24]
+WARNING: [Synth 8-3331] design status_register has unconnected port SR_in[23]
+WARNING: [Synth 8-3331] design status_register has unconnected port SR_in[22]
+WARNING: [Synth 8-3331] design status_register has unconnected port SR_in[21]
+WARNING: [Synth 8-3331] design status_register has unconnected port SR_in[20]
+WARNING: [Synth 8-3331] design status_register has unconnected port SR_in[19]
+WARNING: [Synth 8-3331] design status_register has unconnected port SR_in[18]
+WARNING: [Synth 8-3331] design status_register has unconnected port SR_in[17]
+WARNING: [Synth 8-3331] design status_register has unconnected port SR_in[15]
+WARNING: [Synth 8-3331] design status_register has unconnected port SR_in[14]
+WARNING: [Synth 8-3331] design status_register has unconnected port SR_in[13]
+WARNING: [Synth 8-3331] design status_register has unconnected port SR_in[7]
+WARNING: [Synth 8-3331] design status_register has unconnected port SR_in[6]
+WARNING: [Synth 8-3331] design status_register has unconnected port SR_in[5]
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (Acron_x32_inst/FPU_inst/float_arithmetic_inst/float_sqrt_inst/\reg_rad_reg[0] )
+INFO: [Synth 8-3886] merging instance 'Acron_x32_inst/FPU_inst/float_arithmetic_inst/float_adder_inst/reg_exp_b_reg[8]' (FDCE) to 'Acron_x32_inst/FPU_inst/float_arithmetic_inst/float_adder_inst/reg_exp_b_reg[9]'
+INFO: [Synth 8-3886] merging instance 'Acron_x32_inst/FPU_inst/float_arithmetic_inst/float_adder_inst/reg_exp_a_reg[8]' (FDCE) to 'Acron_x32_inst/FPU_inst/float_arithmetic_inst/float_adder_inst/reg_exp_a_reg[9]'
+INFO: [Synth 8-3886] merging instance 'Acron_x32_inst/FPU_inst/float_arithmetic_inst/float_divider_inst/reg_rem_reg[0]' (FDCE) to 'Acron_x32_inst/FPU_inst/float_arithmetic_inst/float_divider_inst/reg_rem_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (Acron_x32_inst/FPU_inst/float_arithmetic_inst/float_divider_inst/\reg_rem_reg[1] )
+INFO: [Synth 8-3886] merging instance 'Acron_x32_inst/FPU_inst/float_arithmetic_inst/float_sqrt_inst/exp_y_reg[8]' (FDCE) to 'Acron_x32_inst/FPU_inst/float_arithmetic_inst/float_sqrt_inst/exp_y_reg[9]'
+INFO: [Synth 8-3886] merging instance 'Acron_x32_inst/FPU_inst/itof_converter_inst/Exp_reg[6]' (FDCE) to 'Acron_x32_inst/FPU_inst/itof_converter_inst/Exp_reg[5]'
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:05:59 ; elapsed = 00:06:05 . Memory (MB): peak = 1273.238 ; gain = 503.633
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:06:11 ; elapsed = 00:06:16 . Memory (MB): peak = 1273.238 ; gain = 503.633
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:07:33 ; elapsed = 00:07:39 . Memory (MB): peak = 1290.816 ; gain = 521.211
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3886] merging instance 'dmem_addr_reg_reg[0]' (FDC) to 'uart_inst/dmem_addr_reg_reg[0]'
+INFO: [Synth 8-3886] merging instance 'dmem_addr_reg_reg[8]' (FDC) to 'uart_inst/dmem_addr_reg_reg[8]'
+INFO: [Synth 8-3886] merging instance 'dmem_addr_reg_reg[9]' (FDC) to 'uart_inst/dmem_addr_reg_reg[9]'
+INFO: [Synth 8-3886] merging instance 'dmem_addr_reg_reg[6]' (FDC) to 'uart_inst/dmem_addr_reg_reg[6]'
+INFO: [Synth 8-3886] merging instance 'dmem_addr_reg_reg[7]' (FDC) to 'uart_inst/dmem_addr_reg_reg[7]'
+INFO: [Synth 8-3886] merging instance 'dmem_addr_reg_reg[12]' (FDC) to 'uart_inst/dmem_addr_reg_reg[12]'
+INFO: [Synth 8-3886] merging instance 'dmem_addr_reg_reg[13]' (FDC) to 'uart_inst/dmem_addr_reg_reg[13]'
+INFO: [Synth 8-3886] merging instance 'dmem_addr_reg_reg[10]' (FDC) to 'uart_inst/dmem_addr_reg_reg[10]'
+INFO: [Synth 8-3886] merging instance 'dmem_addr_reg_reg[11]' (FDC) to 'uart_inst/dmem_addr_reg_reg[11]'
+INFO: [Synth 8-3886] merging instance 'dmem_addr_reg_reg[4]' (FDC) to 'uart_inst/dmem_addr_reg_reg[4]'
+INFO: [Synth 8-3886] merging instance 'dmem_addr_reg_reg[5]' (FDC) to 'uart_inst/dmem_addr_reg_reg[5]'
+INFO: [Synth 8-3886] merging instance 'dmem_addr_reg_reg[26]' (FDC) to 'uart_inst/dmem_addr_reg_reg[26]'
+INFO: [Synth 8-3886] merging instance 'dmem_addr_reg_reg[27]' (FDC) to 'uart_inst/dmem_addr_reg_reg[27]'
+INFO: [Synth 8-3886] merging instance 'dmem_addr_reg_reg[24]' (FDC) to 'uart_inst/dmem_addr_reg_reg[24]'
+INFO: [Synth 8-3886] merging instance 'dmem_addr_reg_reg[25]' (FDC) to 'uart_inst/dmem_addr_reg_reg[25]'
+INFO: [Synth 8-3886] merging instance 'dmem_addr_reg_reg[30]' (FDC) to 'uart_inst/dmem_addr_reg_reg[30]'
+INFO: [Synth 8-3886] merging instance 'dmem_addr_reg_reg[31]' (FDC) to 'uart_inst/dmem_addr_reg_reg[31]'
+INFO: [Synth 8-3886] merging instance 'dmem_addr_reg_reg[28]' (FDC) to 'uart_inst/dmem_addr_reg_reg[28]'
+INFO: [Synth 8-3886] merging instance 'dmem_addr_reg_reg[29]' (FDC) to 'uart_inst/dmem_addr_reg_reg[29]'
+INFO: [Synth 8-3886] merging instance 'dmem_addr_reg_reg[18]' (FDC) to 'uart_inst/dmem_addr_reg_reg[18]'
+INFO: [Synth 8-3886] merging instance 'dmem_addr_reg_reg[19]' (FDC) to 'uart_inst/dmem_addr_reg_reg[19]'
+INFO: [Synth 8-3886] merging instance 'dmem_addr_reg_reg[16]' (FDC) to 'uart_inst/dmem_addr_reg_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dmem_addr_reg_reg[17]' (FDC) to 'uart_inst/dmem_addr_reg_reg[17]'
+INFO: [Synth 8-3886] merging instance 'dmem_addr_reg_reg[22]' (FDC) to 'uart_inst/dmem_addr_reg_reg[22]'
+INFO: [Synth 8-3886] merging instance 'dmem_addr_reg_reg[23]' (FDC) to 'uart_inst/dmem_addr_reg_reg[23]'
+INFO: [Synth 8-3886] merging instance 'dmem_addr_reg_reg[20]' (FDC) to 'uart_inst/dmem_addr_reg_reg[20]'
+INFO: [Synth 8-3886] merging instance 'dmem_addr_reg_reg[21]' (FDC) to 'uart_inst/dmem_addr_reg_reg[21]'
+INFO: [Synth 8-3886] merging instance 'dmem_addr_reg_reg[14]' (FDC) to 'uart_inst/dmem_addr_reg_reg[14]'
+INFO: [Synth 8-3886] merging instance 'dmem_addr_reg_reg[15]' (FDC) to 'uart_inst/dmem_addr_reg_reg[15]'
+INFO: [Synth 8-3886] merging instance 'dmem_addr_reg_reg[1]' (FDC) to 'uart_inst/dmem_addr_reg_reg[1]'
+INFO: [Synth 8-3886] merging instance 'dmem_addr_reg_reg[2]' (FDC) to 'uart_inst/dmem_addr_reg_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dmem_addr_reg_reg[3]' (FDC) to 'uart_inst/dmem_addr_reg_reg[3]'
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:08:45 ; elapsed = 00:08:52 . Memory (MB): peak = 1620.152 ; gain = 850.547
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:08:51 ; elapsed = 00:08:57 . Memory (MB): peak = 1620.152 ; gain = 850.547
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:08:51 ; elapsed = 00:08:57 . Memory (MB): peak = 1620.152 ; gain = 850.547
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:08:53 ; elapsed = 00:08:59 . Memory (MB): peak = 1620.152 ; gain = 850.547
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:08:53 ; elapsed = 00:08:59 . Memory (MB): peak = 1620.152 ; gain = 850.547
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:08:54 ; elapsed = 00:09:00 . Memory (MB): peak = 1620.152 ; gain = 850.547
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:08:54 ; elapsed = 00:09:00 . Memory (MB): peak = 1620.152 ; gain = 850.547
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |MMCM          |         1|
+|2     |ROM           |         1|
+|3     |RAM           |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |MMCM   |     1|
+|2     |RAM    |     1|
+|3     |ROM    |     1|
+|4     |CARRY4 |   514|
+|5     |LUT1   |   568|
+|6     |LUT2   |   871|
+|7     |LUT3   |   918|
+|8     |LUT4   |  1078|
+|9     |LUT5   |  1261|
+|10    |LUT6   |  6045|
+|11    |MUXF7  |   353|
+|12    |MUXF8  |    54|
+|13    |FDCE   |  3695|
+|14    |FDPE   |    16|
+|15    |FDRE   |    34|
+|16    |IBUF   |     4|
+|17    |OBUF   |     6|
++------+-------+------+
+
+Report Instance Areas: 
++------+--------------------------------+----------------------+------+
+|      |Instance                        |Module                |Cells |
++------+--------------------------------+----------------------+------+
+|1     |top                             |                      | 15546|
+|2     |  Acron_x32_inst                |Acron_x32             | 13130|
+|3     |    FPU_inst                    |FPU                   |  1965|
+|4     |      float_arithmetic_inst     |float_arithmetic      |  1734|
+|5     |        float_adder_inst        |float_adder           |   616|
+|6     |        float_divider_inst      |float_divider         |   336|
+|7     |        float_multiplier_inst   |float_multiplier      |   405|
+|8     |        float_sqrt_inst         |float_sqrt            |   246|
+|9     |        post_processing_inst    |post_processing       |   128|
+|10    |      float_comparator_inst     |float_comparator_seq  |     1|
+|11    |      ftoi_converter_inst       |ftoi_converter        |    96|
+|12    |        float_comparator_inst_1 |float_comparator_comb |     8|
+|13    |      itof_converter_inst       |itof_converter        |    68|
+|14    |      sign_modifier_inst        |sign_modifier         |    61|
+|15    |    control_unit_inst           |control_unit          |  3995|
+|16    |    int_divider_inst            |int_divider           |   936|
+|17    |    int_multiplier_inst         |int_multiplier        |  2706|
+|18    |    register_file_inst          |register_file         |  3484|
+|19    |    status_register_inst        |status_register       |    42|
+|20    |  uart_inst                     |uart                  |  2159|
+|21    |    receiver                    |uart_rx               |  1074|
+|22    |      rx_fifo_stack             |fifo_stack_0          |   816|
+|23    |    transmitter                 |uart_tx               |   682|
+|24    |      tx_fifo_stack             |fifo_stack            |   535|
++------+--------------------------------+----------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:08:54 ; elapsed = 00:09:00 . Memory (MB): peak = 1620.152 ; gain = 850.547
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 21 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:08:41 ; elapsed = 00:08:55 . Memory (MB): peak = 1620.152 ; gain = 722.352
+Synthesis Optimization Complete : Time (s): cpu = 00:08:54 ; elapsed = 00:09:00 . Memory (MB): peak = 1620.152 ; gain = 850.547
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.339 . Memory (MB): peak = 1629.656 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 921 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1629.656 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+188 Infos, 52 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:09:04 ; elapsed = 00:09:11 . Memory (MB): peak = 1629.656 ; gain = 1128.168
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1629.656 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'D:/Benutzer/Documents/Vivado/Projects/Verilog/Acron_x32/Acron_x32.runs/synth_1/FPGA_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file FPGA_top_utilization_synth.rpt -pb FPGA_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Aug  9 02:41:31 2022...
